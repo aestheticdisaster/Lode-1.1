@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: bee6f7b11ffa5854a8ddc62c35827bbf
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Caladea
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: da9b28405f49c3c42b5079868d72828e, type: 3}
+  - {fileID: 12800000, guid: 6a134a2c6cb50844ca91986e63303d92, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

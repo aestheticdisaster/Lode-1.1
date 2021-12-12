@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c82394c42b91994469b93c7a8ca069e4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Microsoft PhagsPa
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f40411a8446a6c0449c9d31d948f1942, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

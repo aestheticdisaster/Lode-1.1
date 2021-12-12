@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a1a6b725c0a848a45ab6a4afc689790e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Liberation Serif
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a046f515307722542b7e03690f501a18, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

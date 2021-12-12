@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 89abb1e4b32a4a94580c672585ab409d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Noto Serif Hebrew
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e26397286f4f50c4c8077821ac373397, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

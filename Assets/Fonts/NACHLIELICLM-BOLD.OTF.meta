@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: febd4e91c6c478d4aa0a42987e948288
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Nachlieli CLM
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 00e05526268bcb54a8e3c6067a63d247, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ca93efd2c5cbc4c4b82573ec566f7228
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Tahoma
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f8d1fcc33989b854faecacce84b73767, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

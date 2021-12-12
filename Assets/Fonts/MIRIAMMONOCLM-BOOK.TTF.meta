@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 41617e91ed3efad45887f15f142b3ac1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Miriam Mono CLM
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e08430bcfd774974c9818866cd61fbc1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c3ffa1ade29a83941b3599f64a8fdc9d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Segoe UI
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 03836d3623168074aaec6540f8393593, type: 3}
+  - {fileID: 12800000, guid: 51e3184f1c06bf94bbbfa0e9340794a3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
