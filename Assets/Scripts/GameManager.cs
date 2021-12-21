@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private bool playerTurn = true;
     private int shipIndex = 0;
     private LodScript lodScript;
+    public OpponentScript opponentScript;
 
     void Start()
     {
@@ -48,6 +49,10 @@ public class GameManager : MonoBehaviour
         {
             shipIndex++;
             lodScript = ships[shipIndex].GetComponent<LodScript>();
+        }
+        else
+        {
+            opponentScript.PlaceOpponentShips();
         }
     }
 
