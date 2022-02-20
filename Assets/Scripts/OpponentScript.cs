@@ -5,6 +5,19 @@ using System.Linq;
 
 public class OpponentScript : MonoBehaviour
 {
+    char[] guess;
+    List<int> potentialHits;
+    List<int> currentHits;
+    private int guess1;
+    public GameObject opponentRaketa;
+
+    private void Start()
+    {
+        potentialHits = new List<int>();
+        currentHits = new List<int>();
+        guess = Enumerable.Repeat('o', 100).ToArray();
+    }
+
     public List<int[]> PlaceOpponentShips()
     {
         List<int[]> opponentShips = new List<int[]>
@@ -53,5 +66,84 @@ public class OpponentScript : MonoBehaviour
             }
         }
         return opponentShips;
+    }
+
+    public void OpponentTurn()
+    {
+        List<int> hitIndex = new List<int>();
+        for (int i = 0; i < guess.Length; i++)
+        {
+            if (guess[i] == 'h')
+            {
+                hitIndex.Add(i);
+            }
+        }
+        if (hitIndex.Count > 1)
+        {
+            int diff = hitIndex[1] - hitIndex[0];
+            int posNeg = Random.Range(0, 2) * 2 - 1;
+            int nextIndex = hitIndex[0] + diff;
+
+            while (guess[nextIndex] != 'o')
+            {
+                if (guess[nextIndex] == 'm' || nextIndex < 0 || nextIndex > 100)
+                {
+                    diff *= -1;
+                }
+                nextIndex += diff;
+            }
+            guess1 = nextIndex;
+        }
+        else if (hitIndex.Count == 1)
+        {
+            List<int> closeTiles = new List<int>();
+            closeTiles.Add(1);
+            closeTiles.Add(-1);
+            closeTiles.Add(10);
+            closeTiles.Add(-10);
+            int index = Random.Range(0, closeTiles.Count);
+            int possibleGuess = hitIndex[0] + closeTiles[index];
+            bool onGrid = possibleGuess > -1 && possibleGuess < 100;
+            while ((!onGrid || guess[possibleGuess] != 'o') && closeTiles.Count > 0)
+            {
+                closeTiles.RemoveAt(index);
+                index = Random.Range(0, closeTiles.Count);
+                possibleGuess = hitIndex[0] + closeTiles[index];
+                onGrid = possibleGuess > -1 && possibleGuess < 100;
+            }
+            guess1 = possibleGuess;
+        }
+        else
+        {
+            int nextIndex = Random.Range(0, 100);
+            while (guess[nextIndex] != 'o')
+            {
+                nextIndex = Random.Range(0, 100);
+            }
+            guess1 = nextIndex;
+        }
+        GameObject placka = GameObject.Find("placka (" + (guess1 + 1) + ")");
+        guess[guess1] = 'm';
+        Vector3 vector = placka.transform.position;
+        vector.y += 100;
+        GameObject raketa = Instantiate(opponentRaketa, vector, opponentRaketa.transform.rotation);
+        raketa.GetComponent<OpponentRaketaScript>().SetTarget(guess1);
+        raketa.GetComponent<OpponentRaketaScript>().targetPlackaLocation = placka.transform.position;
+    }
+
+    public void RaketaHit(int hit)
+    {
+        guess[guess1] = 'h'; 
+    }
+
+    public void SunkPlayer()
+    {
+        for (int i = 0; i < guess.Length; i++)
+        {
+            if (guess[i] == 'h')
+            {
+                guess[i] = 'x';
+            }
+        }
     }
 }

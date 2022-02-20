@@ -7,11 +7,13 @@ public class PlackaScript : MonoBehaviour
     GameManager gameManager;
     Ray ray;
     RaycastHit hit;
-    private bool missileHit = false;
+    private bool raketaHit = false;
+    Color32[] hitColor = new Color32[2];
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
 
     void Update()
@@ -21,11 +23,34 @@ public class PlackaScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && hit.collider.gameObject.name == gameObject.name)
             {
-                if (missileHit == false)
+                if (raketaHit == false)
                 {
                     gameManager.PlackaClicked(hit.collider.gameObject);
                 }
             }
+        }
+    }
+
+    public void SetPlackaColor (int index, Color32 color)
+    {
+        hitColor[index] = color;
+    }
+
+    public void ChangeColor(int colorIndex)
+    {
+        GetComponent<Renderer>().material.color = hitColor[colorIndex];
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Raketa"))
+        {
+            raketaHit = true;
+        }
+        else if (collision.gameObject.CompareTag("OpponentRaketa"))
+        {
+            hitColor[0] = new Color32(100, 0, 0, 255);
+            GetComponent<Renderer>().material.color = hitColor[0];
         }
     }
 }

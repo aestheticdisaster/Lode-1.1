@@ -9,15 +9,26 @@ public class LodScript : MonoBehaviour
     public float zOffset = 0;
     private float nextYRotation = 90f;
     private GameObject clickedPlacka;
+    int hitCount = 0;
+    public int shipSize;
+    private Material[] allMaterials;
+    List<Color> allColors = new List<Color>();
 
-    void Start()
+    private void Start()
     {
-        
+        /*allMaterials = GetComponent<Renderer>().materials;
+        for (int i = 0; i < allMaterials.Length; i++)
+        {
+            allColors.Add(allMaterials[i].color);
+        }*/
     }
 
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Placka"))
+        {
+            touchPlacka.Add(collision.gameObject);
+        }
     }
 
     public void ClearPlackaList()
@@ -32,6 +43,10 @@ public class LodScript : MonoBehaviour
 
     public void RotateShip()
     {
+        if (clickedPlacka == null)
+        {
+            return;
+        }
         touchPlacka.Clear();
         transform.localEulerAngles += new Vector3(0, nextYRotation, 0);
         nextYRotation *= -1;
@@ -43,6 +58,7 @@ public class LodScript : MonoBehaviour
 
     public void SetPosition(Vector3 newVector)
     {
+        ClearPlackaList();
         transform.localPosition = new Vector3(newVector.x + xOffset, 80, newVector.z + zOffset);
     }
 
@@ -50,4 +66,16 @@ public class LodScript : MonoBehaviour
     {
         clickedPlacka = placka;
     }
+
+    public bool OnBoard()
+    {
+        return touchPlacka.Count == shipSize;
+    }
+
+    public bool HitCheckSank()
+    {
+        hitCount++;
+        return shipSize <= hitCount;
+    }
+
 }
