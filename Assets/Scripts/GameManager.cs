@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
             {
                 shipIndex++;
                 lodScript = ships[shipIndex].GetComponent<LodScript>();
+                Debug.Log(shipIndex);
    
             }
             else

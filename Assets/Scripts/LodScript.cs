@@ -38,7 +38,7 @@ public class LodScript : MonoBehaviour
 
     public Vector3 GetOffsetVector(Vector3 plackaPosition)
     {
-        return new Vector3(plackaPosition.x + xOffset, 80, plackaPosition.z + zOffset);
+        return new Vector3(plackaPosition.x + xOffset, 50, plackaPosition.z + zOffset);
     }
 
     public void RotateShip()
@@ -59,7 +59,7 @@ public class LodScript : MonoBehaviour
     public void SetPosition(Vector3 newVector)
     {
         ClearPlackaList();
-        transform.localPosition = new Vector3(newVector.x + xOffset, 80, newVector.z + zOffset);
+        transform.localPosition = new Vector3(newVector.x + xOffset, 50, newVector.z + zOffset);
     }
 
     public void SetClickedPlacka(GameObject placka)
