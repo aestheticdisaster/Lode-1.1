@@ -263,7 +263,7 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 0.7
       maxCurve:
@@ -397,7 +397,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 100
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4954,6 +4954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b8957d69b648e48a16fa87951fd371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipFire: {fileID: 2949144720185922160}
 --- !u!1 &2949144720185922162
 GameObject:
   m_ObjectHideFlags: 0

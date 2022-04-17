@@ -77,5 +77,4 @@ public class LodScript : MonoBehaviour
         hitCount++;
         return shipSize <= hitCount;
     }
-
 }

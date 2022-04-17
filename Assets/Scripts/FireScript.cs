@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class FireScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject shipFire;
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }

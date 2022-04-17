@@ -13,7 +13,8 @@ public class PlackaScript : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-
+        hitColor[0] = gameObject.GetComponent<MeshRenderer>().material.color;
+        hitColor[1] = gameObject.GetComponent<MeshRenderer>().material.color;
     }
 
     void Update()
@@ -49,7 +50,7 @@ public class PlackaScript : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("OpponentRaketa"))
         {
-            hitColor[0] = new Color32(100, 0, 0, 255);
+            hitColor[0] = new Color32(0, 0, 0, 255);
             GetComponent<Renderer>().material.color = hitColor[0];
         }
     }

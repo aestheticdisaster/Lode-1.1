@@ -13,7 +13,7 @@ public class OpponentRaketaScript : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        opponentScript = GameObject.Find("OpponentScript").GetComponent<OpponentScript>();
+        opponentScript = GameObject.Find("OpponentManager").GetComponent<OpponentScript>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -24,7 +24,7 @@ public class OpponentRaketaScript : MonoBehaviour
         }
         else
         {
-
+            opponentScript.PauseAndEnd(targetPlacka);
         }
         Destroy(gameObject);
     }

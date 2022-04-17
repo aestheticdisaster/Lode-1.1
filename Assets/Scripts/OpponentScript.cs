@@ -10,6 +10,8 @@ public class OpponentScript : MonoBehaviour
     List<int> currentHits;
     private int guess1;
     public GameObject opponentRaketa;
+    public GameObject opponentFire;
+    public GameManager gameManager;
 
     private void Start()
     {
@@ -125,15 +127,19 @@ public class OpponentScript : MonoBehaviour
         GameObject placka = GameObject.Find("placka (" + (guess1 + 1) + ")");
         guess[guess1] = 'm';
         Vector3 vector = placka.transform.position;
-        vector.y += 100;
+        vector.y += 400;
         GameObject raketa = Instantiate(opponentRaketa, vector, opponentRaketa.transform.rotation);
+        GameObject fire = Instantiate(opponentFire, vector, opponentFire.transform.rotation);
         raketa.GetComponent<OpponentRaketaScript>().SetTarget(guess1);
         raketa.GetComponent<OpponentRaketaScript>().targetPlackaLocation = placka.transform.position;
+        fire.GetComponent<OpponentRaketaScript>().SetTarget(guess1);
+        fire.GetComponent<OpponentRaketaScript>().targetPlackaLocation = placka.transform.position;
     }
 
     public void RaketaHit(int hit)
     {
-        guess[guess1] = 'h'; 
+        guess[guess1] = 'h';
+        Invoke("EndTurn", 1.0f);
     }
 
     public void SunkPlayer()
@@ -145,5 +151,35 @@ public class OpponentScript : MonoBehaviour
                 guess[i] = 'x';
             }
         }
+    }
+
+    private void EndTurn()
+    {
+        gameManager.GetComponent<GameManager>().EndOpponentTurn();
+    }
+
+    public void PauseAndEnd(int miss)
+    {
+        if (currentHits.Count > 0 && currentHits[0] > miss)
+        {
+            foreach (int potential in potentialHits)
+            {
+                if (currentHits[0] > miss)
+                {
+                    if (potential < miss)
+                    {
+                        potentialHits.Remove(potential);
+                    }
+                    else
+                    {
+                        if (potential > miss)
+                        {
+                            potentialHits.Remove(potential);
+                        }
+                    }
+                }
+            }
+        }
+        Invoke("EndTurn", 1.0f);
     }
 }
